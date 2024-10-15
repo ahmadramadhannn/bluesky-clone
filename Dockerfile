@@ -5,7 +5,7 @@ RUN go mod download
 RUN ls
 COPY . ./
 RUN ls -a
-RUN CGO_ENABLED=0 GOOS=linux go build -o bin/bluesky-backend
+RUN CGO_ENABLED=0 GOOS=linux go build -o bin/bluesky-backend cmd/main.go
 
 FROM scratch as release
 WORKDIR /production
